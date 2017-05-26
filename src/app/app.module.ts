@@ -1,20 +1,24 @@
 import {NgModule} from "@angular/core"
 import {BrowserModule} from "@angular/platform-browser"
+import {FormsModule} from "@angular/forms"
+
+import {AppRoutingModule,routedComponents as mainAppRoutedComponents} from "./app.routing.module"
+import {RoomsModule} from "./rooms/rooms.module"
 
 import {AppComponent} from "./app.component"
-import {ExerciseComponent} from "./exercises/exercises.component"
-import {LoginComponent} from "./login/login.component"
 import {NavComponent} from "./nav/nav.component"
 
 @NgModule ({
     imports: [
-        BrowserModule
+        BrowserModule,
+        FormsModule,
+        RoomsModule,
+        AppRoutingModule
     ],
     declarations: [
         AppComponent,
-        ExerciseComponent,
-        LoginComponent,
-        NavComponent
+        NavComponent,
+        mainAppRoutedComponents
     ],
     bootstrap:[AppComponent]
 })
