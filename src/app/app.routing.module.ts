@@ -6,12 +6,12 @@ import {LoginComponent} from "./login/login.component"
 
 const routes:Routes = [
     {
-        path:"exercises",
-        component:ExerciseComponent
+        path:"login",
+        component:LoginComponent
     },
     {
         path:"",
-        component:LoginComponent
+        component:ExerciseComponent
     },
     {
         path:"**",
