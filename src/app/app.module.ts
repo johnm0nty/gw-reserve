@@ -8,6 +8,10 @@ import {RoomsModule} from "./rooms/rooms.module"
 import {AppComponent} from "./app.component"
 import {NavComponent} from "./nav/nav.component"
 
+import {LoginService} from "./services/login.service"
+import {NavService} from "./services/nav.service"
+import {RoomsService} from "./services/rooms.service"
+
 @NgModule ({
     imports: [
         BrowserModule,
@@ -19,6 +23,11 @@ import {NavComponent} from "./nav/nav.component"
         AppComponent,
         NavComponent,
         mainAppRoutedComponents
+    ],
+    providers: [
+        LoginService,
+        NavService,
+        RoomsService
     ],
     bootstrap:[AppComponent]
 })

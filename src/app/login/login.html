@@ -1,1 +1,3 @@
-<a class="item">Login</a><a class="item">Logout</a>
+<a class="item" (click)="loginService.login()">Login</a>
+<a class="item" (click)="loginService.logout()">Logout</a>
+<p class="item">Logged in: {{loginService.getLoggedInUser() != null}}</p>

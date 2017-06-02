@@ -1,4 +1,4 @@
 <div class="ui menu">
-    <a class="item" *ngFor="let room of listOfRooms" routerLink="rooms/{{room}}/list">{{room}}</a>
+    <a class="item" *ngFor="let room of roomsService.fetchRooms()" routerLink="rooms/{{room.name}}/list">{{room.name}}</a>
     <gw-login class="right menu"></gw-login>
 </div>

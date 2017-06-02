@@ -5,15 +5,19 @@ import {RoomsComponent} from "./rooms.component"
 import {RoomFormComponent} from "./form/form.component"
 import {RoomListComponent} from "./list/list.component"
 
+import {LoginGuard} from "../services/login-guard.service"
+import {DirtyFormGuard} from "../services/dirty-form-guard.service"
+
 const routes:Routes = [
     {
         path:"rooms/:id",
         component:RoomsComponent,
-
+        canActivate:[LoginGuard],
         children:[
             {
                 path:"form",
-                component:RoomFormComponent
+                component:RoomFormComponent,
+                canDeactivate:[DirtyFormGuard]
             },
             {
                 path:"list",
