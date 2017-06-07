@@ -13,7 +13,6 @@ export class RoomsComponent implements OnInit {
     constructor(private activatedRoute:ActivatedRoute) {}
 
     ngOnInit() {
-        this.id = this.activatedRoute.snapshot.params["id"]
         this.activatedRoute.params
             .map(response => response["id"])
             .subscribe(response => this.id = response)

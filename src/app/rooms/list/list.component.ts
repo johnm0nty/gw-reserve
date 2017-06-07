@@ -1,7 +1,9 @@
-import {Component} from "@angular/core"
+import {Component, Input} from "@angular/core"
 
 @Component({
     selector:"gw-room-list",
     templateUrl:"./list.html"
 })
-export class RoomListComponent {}
+export class RoomListComponent {
+    @Input () id:string
+}

@@ -1,13 +1,17 @@
 import {Injectable} from "@angular/core"
-import {CanActivate} from "@angular/router"
+import {CanActivateChild, Router} from "@angular/router"
 
 import {LoginService} from "./login.service"
 
 @Injectable ()
-export class LoginGuard implements CanActivate {
-    constructor (private loginService: LoginService) {}
+export class LoginGuard implements CanActivateChild {
+    constructor (private loginService: LoginService, private router:Router) {}
 
-    canActivate () {
-        return Boolean(this.loginService.getLoggedInUser())
+    canActivateChild () {
+        if (!this.loginService.getLoggedInUser()) {
+            this.router.navigate([""], {fragment: "login-needed"})
+        }
+
+        return true
     }
 }
