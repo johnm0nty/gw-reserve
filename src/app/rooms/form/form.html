@@ -1,1 +1,21 @@
-<div>form <a href="" routerLink="../list">switch to list</a></div>
+<div>form <a routerLink="../list">switch to list</a></div>
+<form novalidate #myForm="ngForm" class="ui form" (ngSubmit)="onRoomSubmission(myForm)" [ngClass]="{'error': myForm.invalid && myForm.submitted}">
+  <div class="field">
+    <label>Reason</label>
+    <select name="reserveReason" required [ngModel]="reserveReason">
+        <option *ngFor="let reason of reasons" [value]="reason">{{reason}}</option>
+    </select>
+  </div>
+  <div class="field">
+    <label>Email</label>
+    <input name="email" placeholder="Email" type="email">
+  </div>
+  <div class="field">
+    <div class="ui checkbox">
+      <input tabindex="0" type="checkbox">
+      <label>I agree to the Terms and Conditions</label>
+    </div>
+  </div>
+  <div *ngIf="myForm.submitted && myForm.controls.reserveReason.errors" class="error">ERROR FOUND</div>
+  <button class="ui button" type="submit">Submit</button>
+</form>

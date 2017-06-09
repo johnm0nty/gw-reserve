@@ -1,2 +1,5 @@
 <div>Exercises</div>
 <div id="login-needed" *ngIf="loginNeeded">Please login.</div>
+<div>Here is my record binding: {{record}}</div>
+<div>Below is the child.</div>
+<gw-exercise-child [recordPropertyOnChild]="record" (onEditRecord)="onChildEdited($event)"></gw-exercise-child>

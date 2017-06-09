@@ -10,7 +10,8 @@ import {NavComponent} from "./nav/nav.component"
 
 import {LoginService} from "./services/login.service"
 import {NavService} from "./services/nav.service"
-import {RoomsService} from "./services/rooms.service"
+import {RoomsService} from "./services/rooms.service";
+import { ExerciseChildComponent } from './exercises/exercise-child/exercise-child.component'
 
 @NgModule ({
     imports: [
@@ -22,7 +23,8 @@ import {RoomsService} from "./services/rooms.service"
     declarations: [
         AppComponent,
         NavComponent,
-        mainAppRoutedComponents
+        mainAppRoutedComponents,
+        ExerciseChildComponent
     ],
     providers: [
         LoginService,
